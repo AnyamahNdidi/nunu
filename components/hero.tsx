@@ -88,7 +88,7 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollY }, ref) => {
           transformOrigin: "top center",
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-2 lg:px-8 items-center justify-items-center md:justify-items-start bg-[rgb(var(--background))] w-full  min-h-[60vh] ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-2 lg:px-8 items-center justify-items-center md:justify-items-start bg-[rgb(var(--background))] w-full pb-3  min-h-[60vh] ">
           {/* Left Column: Animated Text - Centered on mobile */}
           <motion.div
             className="text-center md:text-left w-full md:w-auto"
@@ -178,7 +178,7 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollY }, ref) => {
                 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--accent-gold))] to-[rgb(var(--accent-gold-dark))] rounded-full blur-lg opacity-50"
+                  className="absolute mb-3 inset-0 bg-gradient-to-r from-[rgb(var(--accent-gold))] to-[rgb(var(--accent-gold-dark))] rounded-full blur-lg opacity-50"
                   animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.5, 0.8, 0.5],
@@ -197,7 +197,7 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollY }, ref) => {
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 py-4 text-lg font-semibold bg-[rgb(var(--card-background))]/30 backdrop-blur-md border-[rgb(var(--card-border))]/50 hover:bg-[rgb(var(--card-background))]/50 w-full sm:w-auto"
+                className="px-8 py-4 text-lg  font-semibold bg-[rgb(var(--card-background))]/30 backdrop-blur-md border-[rgb(var(--card-border))]/50 hover:bg-[rgb(var(--card-background))]/50 w-full sm:w-auto"
               >
                 Our Methodology
               </Button>

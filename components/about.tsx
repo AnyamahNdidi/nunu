@@ -57,7 +57,7 @@ export const About = forwardRef<HTMLElement, AnimatedGoldIconsProps>(
       <section
         id="about"
         ref={ref}
-        className="relative z-10 flex   justify-center min-h-screen scroll-snap-align-start" // Changed to min-h-screen
+        className="relative z-10 flex   justify-center min-h-[100vh] scroll-snap-align-start" // Changed to min-h-screen
       >
         <motion.div
           initial="hidden"
@@ -71,7 +71,7 @@ export const About = forwardRef<HTMLElement, AnimatedGoldIconsProps>(
             rotateX: rotateOut,
           }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 min-h-[80vh]  ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 min-h-[90vh]  ">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
