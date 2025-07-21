@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Much Softer Neumorphic Light Theme (Even closer to your images) */
+    --background: 200 205 210; /* Much softer, more muted grey */
+    --foreground: 45 55 72; /* Darker grey for better readability */
+
+    --card-background: 200 205 210; /* Same as background for seamless neumorphism */
+    --card-background-light: 215 220 225; /* Lighter shade for neumorphic highlight */
+    --card-background-dark: 180 185 190; /* Darker shade for neumorphic shadow */
+    --card-border: 170 175 180; /* Subtle border for definition */
+
+    --input-background: 200 205 210; /* Same as background */
+    --input-border: 165 170 175; /* Slightly darker border for inputs */
+
+    --muted-foreground: 107 114 128; /* Medium gray for muted text */
+
+    /* Accent Colors (consistent across themes for gold, adjusted for others) */
+    --accent-gold: 255 215 0; /* Gold */
+    --accent-gold-dark: 217 119 6; /* Darker Gold */
+    --shadow-color: 0 0 0;
+    --accent-green: 34 197 94; /* Darker green for contrast */
+    --accent-purple: 124 58 237; /* Darker purple for contrast */
+    --accent-red: 220 38 38; /* Darker red for contrast */
+    --accent-blue: 59 130 246; /* Nunu Blue 1 (from logo) */
+    --accent-blue-dark: 29 78 216; /* Nunu Blue 2 (from logo) */
+
+    /* Neumorphic Shadow Variables for more realistic depth */
+    --neuro-shadow-light: 220 225 230; /* Softer white highlight */
+    --neuro-shadow-dark: 150 155 165; /* Deeper soft shadow */
+    --neuro-shadow-inset-light: 215 220 225; /* Inner highlight */
+    --neuro-shadow-inset-dark: 180 185 190; /* Inner shadow */
+  }
+
+  [data-theme="dark"] {
+    /* Dark Theme Colors (Neumorphic Dark Grey/Black) */
+    --background: 40 40 40; /* Dark metallic grey */
+    --foreground: 255 255 255; /* Pure White */
+
+    --card-background: 40 40 40; /* Same as background for seamless neumorphism */
+    --card-background-light: 60 60 60; /* Lighter shade for neumorphic highlight */
+    --card-background-dark: 20 20 20; /* Darker shade for neumorphic shadow */
+    --card-border: 80 80 80; /* Darker grey for subtle definition */
+
+    --input-background: 40 40 40; /* Same as background */
+    --input-border: 80 80 80; /* Darker grey */
+    --shadow-color: 255 255 255;
+
+    --muted-foreground: 180 180 180; /* Medium light gray for muted text */
+
+    /* Accent Colors (consistent across themes for gold, adjusted for others) */
+    --accent-gold: 255 215 0; /* Gold */
+    --accent-gold-dark: 218 165 32; /* Darker Gold */
+    --accent-green: 74 222 128; /* Emerald green */
+    --accent-purple: 168 85 247; /* Purple */
+    --accent-red: 239 68 68; /* Red */
+    --accent-blue: 59 130 246; /* Blue for logo circles (Nunu Blue 1) */
+    --accent-blue-dark: 29 78 216; /* Darker blue for logo circles (Nunu Blue 2) */
+  }
+}
+
+/* Directly apply CSS variables to body to avoid Tailwind @apply parsing issue */
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  overflow-x: hidden; /* Prevent horizontal scroll on body */
+}
+
+html {
+  scroll-snap-type: y mandatory; /* Enable scroll snapping for the entire document */
+  overflow-x: hidden; /* Prevent horizontal scroll on html */
+  scroll-behavior: smooth;
+}
+
+/* Optional: Enhance parallax effect */
+section {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+@layer base {
+  /* Shadcn UI components adjustments */
+  .border {
+    border-color: rgb(var(--card-border));
+  }
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  .text-foreground {
+    color: rgb(var(--foreground));
+  }
+  .bg-card {
+    background-color: rgb(var(--card-background));
+  }
+  .border-input {
+    border-color: rgb(var(--input-border));
+  }
+  .bg-input {
+    background-color: rgb(var(--input-background));
+  }
+  .placeholder\:text-muted-foreground::placeholder {
+    color: rgb(var(--muted-foreground));
+  }
+  .focus-visible\:ring-ring:focus-visible {
+    --tw-ring-color: rgb(var(--accent-gold)); /* Use gold for focus ring */
+  }
+  .text-muted-foreground {
+    color: rgb(var(--muted-foreground));
+  }
+}
+
+.slide[data-active] .slideContent:hover {
+  transition: none;
+  transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
+    rotateX(calc(var(--y) * -45deg));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+}
